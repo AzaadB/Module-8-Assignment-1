@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main id="main-holder">
+        <p>Welcome!</p>
+        <form>
+            <label form="usernameInput">
+                <p2>Username: </p2>
+            </label><input type="text" id="usernameInput"><br /><br />
+            <label form="passwordInput">
+                <p2>Password: </p2>
+            </label><input type="text" id="passwordInput"><br /><br />
+            <p1 id="messg"></p1>
+            <br /><br />
+            <a href="#" onclick="verifyUser()">Login</a>
+        </form>
+        <script>
+            function verifyUser() {
+                const username = document.getElementById("usernameInput").value;
+                const password = document.getElementById("passwordInput").value;
+                checkUser(username, password)
+            }
+            function checkUser(username, password) {
+                const sysUsername = "Oscar"
+                const sysPassword = "980"
+
+                if (username === sysUsername && password === sysPassword) {
+                    document.getElementById("messg").innerHTML = "Logging you in...hold on"
+                } else {
+                    document.getElementById("messg").innerHTML = "username or password is wrong...enter again"
+                }
+            }
+        </script>
+    </main>
+</body>
+
+</html>
